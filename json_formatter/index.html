@@ -1,0 +1,265 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JSON Formatter &amp; Validator</title>
+    <meta lang="en" name="description" content="The JSON Formatter &amp; Validator helps debugging JSON data by formatting and validating JSON data so that it can easily be read by human beings." />
+    <meta lang="en" name="keywords" content="JSON Formatter & Validator,JSON Validator,JSON Formatter,JSON Format,Debug JSON,Pretty Print JSON,Validate JSON,JSON Pretty Printer" />
+    <meta name="robots" content="INDEX, FOLLOW" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="canonical" href="https://jsonformatter.curiousconcept.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/style.04526660.css" rel="stylesheet" media="screen" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        var processURL = '/process';
+    </script>
+</head>
+<body data-spy="scroll" data-offset="71" data-target=".navbar-default" id="page-top">
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <h1>
+<!--
+                <a class="navbar-brand" href="#"><img alt="JSON Formatter &amp; Validator" src="https://jsonformatter.curiousconcept.com/img/logo-jsonformatter.png" /></a>
+-->
+                <a class="navbar-brand" href="#">JSON Formatter &amp; Validator</a>
+            </h1>
+        </div>
+<!--
+        <ul class="nav navbar-nav visible-md visible-lg">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://dataconverter.curiousconcept.com"><img height="15" src="https://jsonformatter.curiousconcept.com/img/logo-dataconverter.png" /></a></li>
+                    <li><a href="https://jsonpath.curiousconcept.com"><img height="15" src="https://jsonformatter.curiousconcept.com/img/logo-jsonpath.png" /></a></li>
+                    <li><a href="https://jsonselect.curiousconcept.com"><img height="15" src="https://jsonformatter.curiousconcept.com/img/logo-jsonselect.png" /></a></li>
+                    <li class="divider"></li>
+                    <li><a href="https://zuq.curiousconcept.com"><img height="19" src="https://jsonformatter.curiousconcept.com/img/logo-zuq.png" /></a></li>
+                </ul>
+            </li>
+        </ul>
+-->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden"><a href="#page-top"></a></li>
+                <li><a href="#learn">Learn</a></li>
+<!--
+                <li class="dropdown visible-xs visible-sm">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Tools <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://dataconverter.curiousconcept.com"><img height="15" src="https://jsonformatter.curiousconcept.com/img/logo-dataconverter.png" /></a></li>
+                        <li><a href="https://jsonpath.curiousconcept.com"><img height="15" src="https://jsonformatter.curiousconcept.com/img/logo-jsonpath.png" /></a></li>
+                        <li><a href="https://jsonselect.curiousconcept.com"><img height="15" src="https://jsonformatter.curiousconcept.com/img/logo-jsonselect.png" /></a></li>
+                        <li class="divider"></li>
+                        <li><a href="https://zuq.curiousconcept.com"><img height="19" src="https://jsonformatter.curiousconcept.com/img/logo-zuq.png" /></a></li>
+                    </ul>
+                </li>
+-->
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<section class="formatter">
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 errorholder">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 hint">
+                    <i class="fa fa-mail-forward fa-5x"></i>
+                    <br />
+                    <br />
+                    <p>Paste in JSON or a URL and away you go.</p>
+                </div>
+                <div class="col-md-8 col-md-offset-0">
+                    <div class="form-group">
+                        <label for="exampleInputFile">JSON Data/URL</label>
+                        <div class="jsondataholder">
+                            <textarea rows="5" class="form-control" id="jsondata" name="jsondata"></textarea>
+                            <div class="btn-group btn-group-sm">
+                                <button type="button" class="btn btn-link btn-clear btn-sm"><i class="fa fa-trash-o"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 options">
+
+                    <div class="form-group">
+                        <label for="exampleInputFile">JSON Standard</label>
+                        <select class="form-control" id="jsonstandard" name="jsonstandard">
+                            <option value="1" selected>RFC 4627</option>
+                            <option value="2">RFC 7159</option>
+                            <option value="3">ECMA-404</option>
+                            <option value="0">Do Not Validate</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">JSON Template</label>
+                        <select class="form-control" id="jsontemplate" name="jsontemplate">
+                            <option value="0">4 Space Tab</option>
+                            <option value="1" selected>3 Space Tab</option>
+                            <option value="2">2 Space Tab</option>
+                            <option value="3">Compact</option>
+                        </select>
+                    </div>
+                    <i class="hidden-xs hidden-sm fa fa-mail-forward fa-5x fa-rotate-180"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <button type="button" id="process" class="btn btn-action btn-lg" data-loading-text="<i class='fa fa-cog fa-spin'></i>">Process</button>
+                </div>
+            </div>
+        </form>
+    </div> <!--/ .container -->
+</section><!--/ #formatterwrap -->
+
+<section class="results">
+<!--
+    <div class="media">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- JSONFormatter -->
+<!--
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:728px;height:90px;"
+                         data-ad-client="ca-pub-4807770044227876"
+                         data-ad-slot="1764616909"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="results">
+    </div>
+</section>
+
+<section class="learn">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h2>Learn About JSON</h2>
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-2 col-md-6 col-md-offset-1 col-sm-10 col-sm-offset-1 ">
+                <p>JSON or JavaScript Object Notation is a language-independent open data format that uses human-readable text to express data objects consisting of attribute-value pairs.</p>
+                <p>Although originally derived from the JavaScript scripting language, JSON data can be generated and parsed with a wide variety of programming languages including JavaScript, PHP, Python, Ruby and Java.</p>
+            </div>
+            <div class="col-lg-3 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-10 col-sm-offset-1 ">
+                <p>To learn more about JSON check out some of the following links.</p>
+                <ul class="fa-ul">
+                    <li><i class="fa-li fa fa-external-link"></i><a title="Visit json.org" href="http://json.org/">json.org</a></li>
+                    <li><i class="fa-li fa fa-external-link"></i><a title="Visit Wikipedia's JSON Entry" href="http://en.wikipedia.org/wiki/JSON">Wikipedia - JSON</a></li>
+                    <li><i class="fa-li fa fa-external-link"></i><a href="http://www.w3schools.com/json/" title="Visit w3schools.com's JSON Tutorial">w3schools.com - JSON Tutorial</a></li>
+                    <li><i class="fa-li fa fa-external-link"></i><a title="Visit the blog post that started JSONP" href="http://bob.ippoli.to/archives/2005/12/05/remote-json-jsonp/">bob.ippoli.to - Remote JSON - JSONP</a></li>
+                    <li><i class="fa-li fa fa-external-link"></i><a title="Visit json-p.org" href="http://www.json-p.org/">json-p.org</a>
+                    <li><i class="fa-li fa fa-external-link"></i><a title="Visit Wikipedia's JSONP Entry" href="http://en.wikipedia.org/wiki/JSON#JSONP">Wikipedia - JSONP</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container text-center">
+        <p>© 2007 - 2016 coding-monkey</p>
+    </div>
+</footer>
+
+<div class="modal fade" id="contactresult" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <p>Thank you for taking the time to write in.</p>
+                <p>We will reply as soon as possible.</p>
+                <br />
+                <button type="button" class="btn btn-action" data-dismiss="modal">Close</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="container" id="templates" style="display: none;">
+    <div class="alert alert-danger"></div>
+    <div class="result">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <div class="top">
+                        <div class="left">
+                            <h3></h3>
+                        </div>
+                        <div class="middle">
+                            <div class="name"><div>
+                                <span></span>
+                                <i class="fa fa-pencil"></i>
+                                <input class="form-control input-sm" type="text" />
+                            </div></div>
+                            <div class="url"><div><span></span></div></div>
+                        </div>
+                        <div class="right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-result btn-copy" title="Copy to Clipboard"><i class="fa fa-files-o"></i></button>
+                                <button type="button" class="btn btn-result btn-download" title="Download as File"><i class="fa fa-download"></i></button>
+                                <button type="button" class="btn btn-result btn-collapse-data" title="Collapse All Nodes"><i class="fa fa-minus-square-o"></i></button>
+                                <button type="button" class="btn btn-result btn-expand-data" title="Expand All Nodes"><i class="fa fa-plus-square-o"></i></button>
+                                <button type="button" class="btn btn-result btn-collapse-window" title="Collapse Result"><i class="fa fa-caret-square-o-up"></i></button>
+                                <button type="button" class="btn btn-result btn-expand-window" title="Expand Results"><i class="fa fa-caret-square-o-down"></i></button>
+                                <button type="button" class="btn btn-result btn-close" title="Close Result"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom collapseable">
+                        <div class="validity validity-valid">Valid JSON (<span></span>)</div>
+                        <div class="validity validity-invalid">Invalid JSON (<span></span>)</div>
+                        <span class="labels">Validator Output</span>
+                        <ul class="errors list-unstyled"></ul>
+                        <span class="labels">Formatted JSON Data</span>
+                        <div class="jsonholder">
+                            <div tabindex="-1" class="json"></div>
+                            <div class="btn-group btn-group-sm">
+                                <button type="button" class="btn btn-result btn-sm  btn-shrink" title="Shrink Result"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-result btn-sm btn-grow" title="Grow Result"><i class="fa fa-plus"></i></button>
+                                <button type="button" class="btn btn-result btn-sm  btn-fullscreen" title="Fullscreen"><i class="fa fa-arrows-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/script.fbab5667.js"></script>
+</body>
+</html>
